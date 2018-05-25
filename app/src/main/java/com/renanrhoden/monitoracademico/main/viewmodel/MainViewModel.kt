@@ -1,14 +1,12 @@
 package com.renanrhoden.monitoracademico.main.viewmodel
 
-import android.arch.lifecycle.ViewModel
+import com.renanrhoden.monitoracademico.main.view.MainNavigation
 
-class MainViewModel : ViewModel(){
+class MainViewModel {
+
+    lateinit var navigation: MainNavigation
 
     fun onAddDiscipline(){
-        startAddNewDisciplineActivity()
-    }
-
-    private fun startAddNewDisciplineActivity() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        navigation.navigatoToAddNewDiscipline()
     }
 }
