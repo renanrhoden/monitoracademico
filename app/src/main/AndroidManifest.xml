@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".adicionardisciplina.view.AddDisciplineActivity" />
+
+        <receiver android:name=".scheduler.AlarmReceiver" />
+        <service android:name=".scheduler.AlarmNotificationService" />
     </application>
 
 </manifest>
