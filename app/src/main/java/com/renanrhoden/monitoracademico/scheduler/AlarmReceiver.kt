@@ -8,7 +8,7 @@ import android.support.v4.content.WakefulBroadcastReceiver.startWakefulService
 
 class AlarmReceiver: BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
-        val componentName = ComponentName(context?.packageName, AlarmNotificationService::class.java.name)
+        val componentName = ComponentName(context?.packageName, AlertService::class.java.name)
         startWakefulService(context, (intent?.setComponent(componentName)))
     }
 }
