@@ -8,6 +8,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import com.renanrhoden.monitoracademico.R
@@ -35,17 +36,6 @@ class AddDisciplineActivity : AppCompatActivity() {
         save.setOnClickListener {
             triggerAlarmManager(5)
         }
-
-        val builder = AlertDialog.Builder(this)
-        val simListener = DialogInterface.OnClickListener { dialog, which -> }
-        val naoListener = DialogInterface.OnClickListener { dialog, which -> }
-
-        builder.setTitle("Foi na aula?")
-                .setMessage("Foi na aula de IHC?")
-                .setPositiveButton("SIM", simListener)
-                .setNegativeButton("NAO", naoListener)
-
-        builder.create().show()
     }
 
     fun triggerAlarmManager(alarmTriggerTime: Int) {

@@ -10,8 +10,8 @@ class AlertDialogActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val builder = AlertDialog.Builder(this)
-        val simListener = DialogInterface.OnClickListener { dialog, which -> }
-        val naoListener = DialogInterface.OnClickListener { dialog, which -> }
+        val simListener = DialogInterface.OnClickListener { dialog, which -> finish()}
+        val naoListener = DialogInterface.OnClickListener { dialog, which -> finish()}
 
         builder.setTitle("Foi na aula?")
                 .setMessage("Foi na aula de IHC?")
