@@ -22,6 +22,7 @@
         <activity
             android:name=".scheduler.AlertDialogActivity"
             android:theme="@style/Theme.AppCompat.Translucent" />
+        <activity android:name=".listadisciplinas.view.ListaDisciplinasActivity" />
 
         <receiver android:name=".scheduler.AlarmReceiver" />
 

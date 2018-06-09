@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.renanrhoden.monitoracademico.DISCIPLINE
 
 class AlertDialogActivity : AppCompatActivity() {
 
@@ -13,8 +14,9 @@ class AlertDialogActivity : AppCompatActivity() {
         val simListener = DialogInterface.OnClickListener { dialog, which -> finish()}
         val naoListener = DialogInterface.OnClickListener { dialog, which -> finish()}
 
-        builder.setTitle("Foi na aula?")
-                .setMessage("Foi na aula de IHC?")
+        val disciplina = intent.getStringExtra(DISCIPLINE)
+        builder.setTitle("Monitor de frequência")
+                .setMessage("Foi na aula de $disciplina?")
                 .setPositiveButton("SIM", simListener)
                 .setNegativeButton("NAO", naoListener)
 

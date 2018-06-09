@@ -85,21 +85,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checked="@={viewModel.MManhaChecked}"
                     android:text="Manhã" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checked="@={viewModel.MTardeChecked}"
                     android:text="Tarde" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checked="@={viewModel.MNoiteChecked}"
                     android:text="Noite" />
             </RadioGroup>
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/save"
+            android:gravity="center"
+            android:visibility="@{viewModel.mErrorVisibility}"
+            android:text="Escreva um nome para a disciplina"
+            android:textColor="#ff0000" />
 
         <Button
             android:id="@+id/save"
@@ -107,6 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:onClick="@{() -> viewModel.onSalvarClick()}"
             android:text="SALVAR" />
     </RelativeLayout>
 </layout>
