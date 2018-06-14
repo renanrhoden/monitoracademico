@@ -72,7 +72,7 @@ class AddDisciplineViewModel {
     private fun getPeriodOfDay(): Int {
         return when {
             mManhaChecked.get() -> 13
-            mManhaChecked.get() -> 19
+            mTardeChecked.get() -> 19
             mNoiteChecked.get() -> 23
             else -> {
                 0

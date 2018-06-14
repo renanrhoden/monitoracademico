@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), MainNavigation {
         val all = shared.all
 
         val lista = all.map {
-            ListagemItemDisciplinaViewModel(it.key, it.value.toString())
+            ListagemItemDisciplinaViewModel(it.key, "quarta", it.value.toString())
         }
         adapter.disciplinas = lista.toMutableList()
         adapter.notifyDataSetChanged()

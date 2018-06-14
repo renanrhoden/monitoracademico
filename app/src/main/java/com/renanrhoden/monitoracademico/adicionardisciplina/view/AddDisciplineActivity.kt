@@ -44,6 +44,7 @@ class AddDisciplineActivity : AppCompatActivity(), Scheduler {
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.DAY_OF_WEEK, dayOfWeek)
         calendar.set(Calendar.HOUR_OF_DAY, hour)
+        calendar.set(Calendar.MINUTE, 17)
 
         // Check we aren't setting it in the past which would trigger it to fire instantly
         if (calendar.timeInMillis < System.currentTimeMillis()) {
