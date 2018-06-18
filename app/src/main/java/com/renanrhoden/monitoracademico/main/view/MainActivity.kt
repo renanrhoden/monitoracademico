@@ -1,5 +1,6 @@
 package com.renanrhoden.monitoracademico.main.view
 
+import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
@@ -35,14 +36,15 @@ class MainActivity : AppCompatActivity(), MainNavigation {
         super.onResume()
         val shared = getSharedPreferences(PREFERENCIA, MODE_PRIVATE)
         val all = shared.all
-
         val lista = all.map {
-            ListagemItemDisciplinaViewModel(it.key, "quarta", it.value.toString())
+            ListagemItemDisciplinaViewModel(it.key ?: "", "", it.value.toString())
         }
         adapter.disciplinas = lista.toMutableList()
         adapter.notifyDataSetChanged()
+
         val swipeHandler = object : SwipeToDeleteCallback(this) {
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                getSharedPreferences(PREFERENCIA, Context.MODE_PRIVATE).edit().remove((viewHolder as ListaAdapter.SwipeViewHolder).binding.viewModel?.nome).apply()
                 val adapter = binding.listaRecycler.adapter as ListaAdapter
                 adapter.removeAt(viewHolder.adapterPosition)
             }
