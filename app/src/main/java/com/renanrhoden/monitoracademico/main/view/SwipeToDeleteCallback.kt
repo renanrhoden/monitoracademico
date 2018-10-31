@@ -3,8 +3,8 @@ package com.renanrhoden.monitoracademico.main.view
 import android.content.Context
 import android.graphics.*
 import android.graphics.drawable.ColorDrawable
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.helper.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.ItemTouchHelper
 import com.renanrhoden.monitoracademico.R
 
 abstract class SwipeToDeleteCallback(context: Context) : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
@@ -17,7 +17,7 @@ abstract class SwipeToDeleteCallback(context: Context) : ItemTouchHelper.SimpleC
     private val clearPaint = Paint().apply { xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR) }
 
 
-    override fun getMovementFlags(recyclerView: RecyclerView?, viewHolder: RecyclerView.ViewHolder?): Int {
+    override fun getMovementFlags(recyclerView: androidx.recyclerview.widget.RecyclerView?, viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder?): Int {
         /**
          * To disable "swipe" for specific item return 0 here.
          * For example:
@@ -28,12 +28,12 @@ abstract class SwipeToDeleteCallback(context: Context) : ItemTouchHelper.SimpleC
         return super.getMovementFlags(recyclerView, viewHolder)
     }
 
-    override fun onMove(recyclerView: RecyclerView?, viewHolder: RecyclerView.ViewHolder?, target: RecyclerView.ViewHolder?): Boolean {
+    override fun onMove(recyclerView: androidx.recyclerview.widget.RecyclerView?, viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder?, target: androidx.recyclerview.widget.RecyclerView.ViewHolder?): Boolean {
         return false
     }
 
     override fun onChildDraw(
-            c: Canvas?, recyclerView: RecyclerView?, viewHolder: RecyclerView.ViewHolder,
+            c: Canvas?, recyclerView: androidx.recyclerview.widget.RecyclerView?, viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder,
             dX: Float, dY: Float, actionState: Int, isCurrentlyActive: Boolean
     ) {
 

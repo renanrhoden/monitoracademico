@@ -1,8 +1,8 @@
 package com.renanrhoden.monitoracademico.adicionardisciplina.viewmodel
 
-import android.databinding.ObservableBoolean
-import android.databinding.ObservableField
-import android.databinding.ObservableInt
+import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
+import androidx.databinding.ObservableInt
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import com.renanrhoden.monitoracademico.adicionardisciplina.view.Scheduler

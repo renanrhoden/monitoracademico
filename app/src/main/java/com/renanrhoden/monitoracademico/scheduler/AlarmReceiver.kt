@@ -5,7 +5,7 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import android.support.v4.content.WakefulBroadcastReceiver.startWakefulService
+import androidx.legacy.content.WakefulBroadcastReceiver.startWakefulService
 
 class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
