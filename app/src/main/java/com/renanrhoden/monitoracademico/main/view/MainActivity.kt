@@ -2,12 +2,12 @@ package com.renanrhoden.monitoracademico.main.view
 
 import android.content.Context
 import android.content.Intent
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.helper.ItemTouchHelper
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.ItemTouchHelper
 import com.renanrhoden.monitoracademico.PREFERENCIA
 import com.renanrhoden.monitoracademico.R
 import com.renanrhoden.monitoracademico.adicionardisciplina.view.AddDisciplineActivity
@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity(), MainNavigation {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewModel.navigation = this
         binding.viewModel = viewModel
-        binding.listaRecycler.layoutManager = LinearLayoutManager(this)
+        binding.listaRecycler.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         binding.listaRecycler.adapter = adapter
 
     }
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), MainNavigation {
         adapter.notifyDataSetChanged()
 
         val swipeHandler = object : SwipeToDeleteCallback(this) {
-            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+            override fun onSwiped(viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder, direction: Int) {
                 getSharedPreferences(PREFERENCIA, Context.MODE_PRIVATE).edit().remove((viewHolder as ListaAdapter.SwipeViewHolder).binding.viewModel?.nome).apply()
                 val adapter = binding.listaRecycler.adapter as ListaAdapter
                 adapter.removeAt(viewHolder.adapterPosition)

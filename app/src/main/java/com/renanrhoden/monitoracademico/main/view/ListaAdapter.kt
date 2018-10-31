@@ -1,8 +1,8 @@
 package com.renanrhoden.monitoracademico.main.view
 
 import android.content.Context.MODE_PRIVATE
-import android.databinding.DataBindingUtil
-import android.support.v7.widget.RecyclerView
+import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater.from
 import android.view.ViewGroup
 import com.renanrhoden.monitoracademico.PREFERENCIA
@@ -10,7 +10,7 @@ import com.renanrhoden.monitoracademico.R
 import com.renanrhoden.monitoracademico.databinding.ListagemItemDisciplinaBinding
 import com.renanrhoden.monitoracademico.main.viewmodel.ListagemItemDisciplinaViewModel
 
-class ListaAdapter : RecyclerView.Adapter<ListaAdapter.SwipeViewHolder>() {
+class ListaAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<ListaAdapter.SwipeViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SwipeViewHolder {
         val binding = DataBindingUtil.inflate<ListagemItemDisciplinaBinding>(
                 from(parent.context),
@@ -37,7 +37,7 @@ class ListaAdapter : RecyclerView.Adapter<ListaAdapter.SwipeViewHolder>() {
         return disciplinas.size
     }
 
-    class SwipeViewHolder constructor(val binding: ListagemItemDisciplinaBinding) : RecyclerView.ViewHolder(binding.root) {
+    class SwipeViewHolder constructor(val binding: ListagemItemDisciplinaBinding) : androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {
         fun setup() {
             val shared = binding.root.context.getSharedPreferences(PREFERENCIA, MODE_PRIVATE)
             val discipline = binding.viewModel?.nome
